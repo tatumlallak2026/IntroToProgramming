@@ -1,2 +1,0 @@
-# IntroToProgramming
-print("hello world")
