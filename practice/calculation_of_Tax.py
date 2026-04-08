@@ -1,5 +1,5 @@
-def item():
-    return input("enter item name: ")
+
+item = input()
 
 def applecost():
     return .99
@@ -12,5 +12,13 @@ def price():
 
 def total():
     return rate() * price()
+
+store = {
+    "apple": 0.99,
+    "banana": 0.59
+    ,
+}
+
+print(store[item])
 
 print(total())
