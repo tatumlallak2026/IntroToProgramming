@@ -1,6 +1,17 @@
-def get_number():
-    num1 = int(input("Enter a number: "))
+def getnumber():
+    n = input ("enter a number: ")
     try:
-        n = int(num1)
+        n = float(n)
+        print("you entered the number", n)
+        return n
     except ValueError:
-        print("Invalid input. Please enter a valid number.")
+        print("invalid input, please enter a number")
+        getnumber()
+
+def Divide(n):
+    try:
+        return 10 /n
+    except ZeroDivisionError:
+        print("cannot divide by zero")
+
+print(Divide(getnumber()))
