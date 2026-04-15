@@ -1,12 +1,8 @@
-answer = input("what is ram? ")
-if answer == "random access memory":
-    print("correct")
-else:
-    print("incorrect")
+def test():
+    Q1 = int(input("what is 2 + 2? "))
+    if Q1 == 4:
+        print("Correct!")
+    else:
+        print("incorrect")
 
-answer = input("what is cpu? ")
-if answer == "central processing unit":
-    print("correct")
-else:
-    print("incorrect")
-    
+        
