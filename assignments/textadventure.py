@@ -82,17 +82,8 @@ def follow_rustic_path():
         rusticpath2 = input(">>>")
 
         if rusticpath2 == "1":
-            print("you continue into the cave, it feels if as if you body is being squeezed more and more the deeper you go.")
-            print("you come up to a dead end, although you feel around and find a ledge that you can fit through.")
-            print("take a large breath to slim your body and rip your body through the crunching ledge.")
-            print("you struggle to crawl througth the ledge, but you are making progress.")
-            print("what do you do?")
-            print("1. keep goiing")
-            print("2. turn back")
-            rusticpath3 = input(">>>")
-            
-            if rusticpath3 == "1":
-                endless_cave()
+            into_the_cave()
+                
     
     elif rusticpath1 == "2":
         print("you turn back and head back to where you started.")
@@ -127,20 +118,43 @@ def endless_cave():
     print("what do you do?")
     print("1. keep going")
     print("2. turn back")
-    endless_cave = input(">>>")
+    cave = input(">>>")
 
-    if endless_cave == "1":
+    if cave == "1":
         endless_cave()
 
-    elif endless_cave == "2":
-        print("you take another deep breath and start to crawl backwards")
-        print("you try to move but you feel as if your body is being squeezed more and more the further you go back.")
-        print("you start to panic, you try to move but you feel as if your body is being squeezed more and more the further you go back.")
-        print("YOUR JOURNEY HAS COME TO AN END, YOU ARE TRAPPED IN THE CAVE TILL THE END OF TIME.")
+    elif cave == "2":
+        bad_cave_ending()
     
     else:
         print("invalid input, try again.")
         endless_cave()
 
+def bad_cave_ending():
+    print("you take another deep breath and start to crawl backwards")
+    print("you try to move but you feel as if your body is being squeezed more and more the further you go back.")
+    print("you start to panic, you try to move but you feel as if your body is being squeezed more and more the further you go back.")
+    print("YOUR JOURNEY HAS COME TO AN END, YOU ARE TRAPPED IN THE CAVE TILL THE END OF TIME.")
+
+
+def into_the_cave():
+    print("you continue into the cave, it feels if as if you body is being squeezed more and more the deeper you go.")
+    print("you come up to a dead end, although you feel around and find a ledge that you can fit through.")
+    print("take a large breath to slim your body and rip your body through the crunching ledge.")
+    print("you struggle to crawl througth the ledge, but you are making progress.")
+    print("what do you do?")
+    print("1. keep going")
+    print("2. turn back")
+    rusticpath3 = input(">>>")
+            
+    if rusticpath3 == "1":
+                endless_cave()
+            
+    elif rusticpath3 == "2":
+                bad_cave_ending()
+            
+    else:
+                print("invalid input, try again.")
+                into_the_cave()
 
 start_adventure()
