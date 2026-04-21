@@ -9,6 +9,9 @@ def start_adventure():
     print("you look around and see a dense forest all around. There is a rustic path that retreats into the dark canopy of the forest.")
     print("you turn around and see a small stream flowing.")
     print("you look left and see a another path that leads to an opening in the forest.")
+    start_option()
+
+def start_option():
     print("what should you do?")
     print("1. follow the rustic path")
     print("2. follow the stream")
@@ -17,13 +20,13 @@ def start_adventure():
     int_input = input(">>>")
 
     if int_input == "1":
-        follow_rustic_path()
+        rustic_path()
 
     elif int_input == "2":
-        follow_stream()
+        stream()
 
     elif int_input == "3":
-        follow_path_to_opening()
+        opening()
 
     elif int_input == "4":
         print("you stay right where you are. . .")
@@ -32,7 +35,7 @@ def start_adventure():
 
     else:
         print("invalid input, try again.")
-        start_adventure()
+        start_option()
 
 def return_to_start():
     print("everything looks the same, just the way you left it.")
@@ -45,13 +48,13 @@ def return_to_start():
     int_input = input(">>>")
 
     if int_input == "1":
-        follow_rustic_path()
+        rustic_path()
 
     elif int_input == "2":
-        follow_stream()
+        stream()
 
     elif int_input == "3":
-        follow_path_to_opening()
+        opening()
 
     elif int_input == "4":
         print("you stay right where you are. . .")
@@ -62,8 +65,28 @@ def return_to_start():
         print("invalid input, try again.")
         return_to_start()
 
+def continue_in_tocave():
+    print("against your own gut, you keep going. you continuously crawl through the canopy, often feeling small scratches on your skin.")
+    print("after a while, your hands start to feel something sharp.")
+    print("you keep feeling around, eveyrthing feels as if its made of stone.")
+    print("you come to the conclusion that you are in a cave.")
+    print("what do you do?")
+    print("1. keep going")
+    print("2. turn back")
+    rusticpath2 = input(">>>")
 
-def follow_rustic_path():
+    if rusticpath2 == "1":
+            into_the_cave()
+
+    elif rusticpath2 == "2":
+            print("you turn back and head back to where you started.")
+            return_to_start()
+
+    else:
+            print("invalid input, try again.")
+            rustic_path()
+
+def rustic_path():
     print("you follow the dark path, you duck your head into the canopy. light is ripped from your existence.")
     print("you are starting to have second thoughts.")
     print("what should you do?")
@@ -72,17 +95,7 @@ def follow_rustic_path():
     rusticpath1 = input(">>>")
 
     if rusticpath1 == "1":
-        print("against your own gut, you keep going. you continuously crawl through the canopy, often feeling small scratches on your skin.")
-        print("after a while, your hands start to feel something sharp.")
-        print("you keep feeling around, eveyrthing feels as if its made of stone.")
-        print("you come to the conclusion that you are in a cave.")
-        print("what do you do?")
-        print("1. keep going")
-        print("2. turn back")
-        rusticpath2 = input(">>>")
-
-        if rusticpath2 == "1":
-            into_the_cave()
+        continue_in_tocave()
                 
     
     elif rusticpath1 == "2":
@@ -91,27 +104,7 @@ def follow_rustic_path():
 
     else:
         print("invalid input, try again.")
-        follow_rustic_path()
-
-def follow_stream():
-    print("you follow the stream, the water is cold and refreshing.")
-    print("you see a small cabin in the distance.")
-    print("what should you do?")
-    print("1. approach the cabin")
-    print("2. keep following the stream")
-    print("3. turn back")
-
-
-
-def follow_path_to_opening():
-    print("you walk throught the opening and find yourself in a strong meadow full of flowers and insects buzzing around.")
-    print("its relaxing and you start to feel at peace.")
-    print("what should you do?")
-    print("1. lay down and relax")
-    print("2. explore the meadow")
-    print("3. turn back")
-
-
+        rustic_path()
 
 def endless_cave():
     print("you take another deep breath, and move forward about 10 more feet.")
@@ -131,11 +124,11 @@ def endless_cave():
         endless_cave()
 
 def bad_cave_ending():
-    print("you take another deep breath and start to crawl backwards")
-    print("you try to move but you feel as if your body is being squeezed more and more the further you go back.")
+    print("you take another deep breath and start to crawl feet first")
+    print("The sharp edges of the creves cut into your skin.")
     print("you start to panic, you try to move but you feel as if your body is being squeezed more and more the further you go back.")
+    print("you are stuck. . .")
     print("YOUR JOURNEY HAS COME TO AN END, YOU ARE TRAPPED IN THE CAVE TILL THE END OF TIME.")
-
 
 def into_the_cave():
     print("you continue into the cave, it feels if as if you body is being squeezed more and more the deeper you go.")
@@ -156,5 +149,21 @@ def into_the_cave():
     else:
                 print("invalid input, try again.")
                 into_the_cave()
+
+def stream():
+    print("you follow the stream, the water is cold and refreshing.")
+    print("you see a small cabin in the distance.")
+    print("what should you do?")
+    print("1. approach the cabin")
+    print("2. keep following the stream")
+    print("3. turn back")
+
+def opening():
+    print("you walk throught the opening and find yourself in a strong meadow full of flowers and insects buzzing around.")
+    print("its relaxing and you start to feel at peace.")
+    print("what should you do?")
+    print("1. lay down and relax")
+    print("2. explore the meadow")
+    print("3. turn back")
 
 start_adventure()
