@@ -3,7 +3,8 @@
 # place: forest - warm summer day.
 # mood: lost
 key = False
-forest_medow = False
+forest_meadow = False
+knife = False
 
 def start_adventure():
     print("you wake up laying in the middle of a forest, you are lost with no memory of who you are, where you're from and how you got there.")
@@ -165,6 +166,19 @@ def stream_1():
 
     if stream1 == "1":
          stream_cabin()
+    
+    elif stream1 == "2":
+        print("you keep following the stream.")
+        stream_2()
+
+    elif stream1 == "3":
+            print("you turn back and head back to where you started.")
+            return_to_start()
+         
+    else:
+        print("invalid input, try again.")
+        stream_1()
+
 
 def stream_cabin():
      print("you approach the still dark cabin surrounded by dense mahogany trees, its rustic boards are weathered and worn.")
@@ -199,8 +213,6 @@ def stream_cabin_livingroom():
      print("you step into the living room, you asses the room and see a fireplace, some furniture, and a small table.")
      print("what will you explore first?")
      livingroom_1()
-
-
 
 def livingroom_1():
         print("1. explore the fireplace")
@@ -302,18 +314,106 @@ def stairs():
          stairs()
 
 def door1():
-    print("placeholder door 1.")
-      
+    print("You open the door with a large creak, ")
+    print("There is a window illuminating the room with natural light,")
+    print("You can see the dust in the air.")
+    print("There is a medium bed.")
+    print("small vanity table with a mirror.")
+    print("A dresser with 4 drawers.")
+    print("what do you explore first?")
+    locked_bedroom()
+    
+def locked_bedroom():
+    print("1. explore the bed")
+    print("2. explore the vanity table")
+    print("3. explore the dresser")
+    print("4. go back to the hallway")
+    locked_bedroom1 = input(">>>")
+
+    if locked_bedroom1 == "1":
+        if knife == True:
+             print("you have already explored the bed, there is nothing new.")
+             locked_bedroom()
+
+        if knife == False:
+            print("you walk over to the bed, there is nothing but a few old pillows and a blanket.")
+            print("do you look under the bed?")
+            print("1. yes")
+            print("2. no")
+            underbed()
+
+    elif locked_bedroom1 == "2":
+        print("you approach the vanity table, there is a small mirror and a few drawers.")
+        print("you open the drawers and see that they are empty.")
+        locked_bedroom()
+
+    elif locked_bedroom1 == "3":
+        print("you open the dresser and see that it is empty.")
+        locked_bedroom()
+
+    elif locked_bedroom1 == "4":
+        print("you decide to go back to the hallway.")
+        stairs()
+
+    else:
+        print("invalid input, try again.")
+        locked_bedroom()
+
 
 def bedroom2():
     print("placeholder door 2.")
 
+def underbed():
+    underbed1 = input(">>>")
 
+    if underbed1 == "1":
+        print("you look under the bed and see a small box.")
+        print("the box has a 4 digit code lock on it.")
+        box()
 
+    elif underbed1 == "2":
+        print("you decide not to look under the bed.")
+        locked_bedroom()
 
+    else:
+        print("invalid input, try again.")
+        underbed()
 
+def box():
+    print("1. try to open")
+    print("2. return to room")
+    lockbox()
 
+def lockbox():
+    lockbox1 = input(">>>")
 
+    if lockbox1 == "1":
+        code()
+
+    elif lockbox1 == "2":
+        print("you decide to return to the room.")
+        locked_bedroom()
+
+    else:
+        print("invalid input, try again.")
+        box()
+
+def code():
+    print("you try to open the box, it asks for a 4 digit code.")
+    print("what is the code?")
+    code1 = input(">>>")
+
+    if code1 == "7028":
+        print("the box clicks open")
+        print("what a strange code. . .")
+        print("you find a knife inside the box. its silver blade is tarnished and the handle is made of a dark wood.")
+        global knife
+        knife = True
+        locked_bedroom()
+
+    else:
+        print("the box does not open, you have no idea what the code could be.")
+        box()
 
 def opening():
     print("you walk throught the opening and find yourself in a strong meadow full of flowers and insects buzzing around.")
