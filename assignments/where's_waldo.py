@@ -1,17 +1,17 @@
 with open("C:\\Users\\tatum\\OneDrive\\Documents\\intro to programming\\IntroToProgramming\\assignments\\names.txt", "r") as file:
     
     found = False
-
+    name = input("what name are you looking for? >>>").capitalize()
+    x = 0 
     for lines in file:
-
-        if (lines.strip() == "waldo"):
+        x += 1
+        if (lines.strip() == name):
             found = True
             break
 
     if found:
-         print("waldo was found!!")
+         print( name, "was found on line", x)
          
-
     else:
-        print("waldo is not here. . . ")
+        print(name, "is not here. . . ")
 
